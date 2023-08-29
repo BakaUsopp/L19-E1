@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script type="text/javascript">
+        function call(){
+            let h =new XMLHttpRequest();
+            h.onreadystatechange = function(){
+                if(this.readyState == 4 && this.status ==200){
+                    document.getElementById("op").innerHTML =this.responseText
+                }
+            }
+
+            h.open("GET","http://localhost:8080/demo",true);
+            h.send(h.responseText);
+
+        }
+    </script>
+</head>
+<body onload="call()">
+
+<h1 id="op"> </h1>
+
+</body>
+</html>
